@@ -28,10 +28,10 @@ You will need the following things properly installed on your computer.
 
 Make use of the many generators for code, try `ember help generate` for more details
 
-### Running Tests
+<!-- ### Running Tests
 
 * `ember test`
-* `ember test --server`
+* `ember test --server` -->
 
 ### Linting
 
@@ -43,9 +43,9 @@ Make use of the many generators for code, try `ember help generate` for more det
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-### Deploying
+<!-- ### Deploying
 
-Specify what it takes to deploy your app.
+Specify what it takes to deploy your app. -->
 
 ## Further Reading / Useful Links
 
