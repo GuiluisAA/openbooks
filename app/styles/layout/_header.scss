@@ -16,9 +16,9 @@
   // 'Marca' centralizada no mobile
   text-align: center;
   
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
     // 'Marca' à esquerda no tablete/desktop
-    text-align: left;    
+    text-align: left;
   }
 
   // Inclui a sombra (mixin no arquivo 'abstracts/_mixins.scss')
@@ -44,11 +44,17 @@
   .header-menu-btn {
 
     display: inline-block;
+
+    @media (min-width: 992px) {
+      // Esconde o botão no tablete/desktop
+      display: none;
+    }
+
     // Posição do Botão no header (em relação ao .container)
     position: absolute;
-    right: 0;
+    left: 0;
     top: 0;
-    padding: (($header-height - 16px) / 2) 20px;
+    padding: (($header-height - 16px) / 2);
     //Resets do botão
     background-color: transparent;
     outline: 0;
