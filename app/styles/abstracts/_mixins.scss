@@ -1,14 +1,14 @@
 // Fonts mixins
 @mixin font-regular($font-size) {
 
-	font-family: $font-family-defaut;
+	font-family: $font-family-default;
 	font-weight: 400;
 	font-size: $font-size;
 }
 
 @mixin font-medium($font-size) {
 
-	font-family: $font-family-defaut;
+	font-family: $font-family-default;
 	font-weight: 500;
 	font-size: $font-size;
 }
@@ -28,7 +28,7 @@
   box-shadow: $x $y $blur 0px rgba(0, 0, 0, $opacity);
 }
 
-// Define shadow by the elevation (in dp)
+// Define shadow by the elevation (in dp) [Material Design]
 @mixin shadowElevation($dp) {
 
   @if $dp==2 {

@@ -1,0 +1,72 @@
+/**
+ * Header
+*/
+.header {
+
+  z-index: 100;
+  // Define a posição do header como fixed
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: $header-height;
+  
+  background-color: #0097A7;
+
+  // 'Marca' centralizada no mobile
+  text-align: center;
+  
+  @media (min-width: 768px) {
+    // 'Marca' à esquerda no tablete/desktop
+    text-align: left;    
+  }
+
+  // Inclui a sombra (mixin no arquivo 'abstracts/_mixins.scss')
+  @include shadowElevation(4);
+
+  .header-brand {
+    $header-brand-height: 24px;
+    
+    display: inline-block;
+    vertical-align: middle;
+    margin: (($header-height - $header-brand-height) / 2) 0;
+
+    @include font-medium($header-brand-height);
+    line-height: $header-brand-height;
+    color: #fff;
+  }
+
+  .container {
+    // Relative para o botão abaixo que é absoluto
+    position: relative;
+  }
+
+  .header-menu-btn {
+
+    display: inline-block;
+    // Posição do Botão no header (em relação ao .container)
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: (($header-height - 16px) / 2) 20px;
+    //Resets do botão
+    background-color: transparent;
+    outline: 0;
+    border: none;
+
+    cursor: pointer;
+    // Opacidade normal
+    opacity: 0.75;
+    transition: opacity 0.1s;
+
+    &:hover {
+      // Opacidade no hover
+      opacity: 1;
+    }
+
+    .icon {
+      // Deixa o icone com a mesma altura do botão
+      vertical-align: bottom;
+    }
+  }
+}
