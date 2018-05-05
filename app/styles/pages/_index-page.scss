@@ -16,8 +16,15 @@
 
     .title {
 
-      @include font-semibold(24px);
+      @include font-semibold(32px);
       color: $font-color-secondary;
+      margin-bottom: 0;
+    }
+
+    .clear-search {
+
+      @include font-regular(12px);
+      margin: 0 0 20px 0;
     }
 
   }

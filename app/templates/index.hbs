@@ -11,14 +11,23 @@
   <div class="rearch-results">
 
     <h3 class="title">Resultados</h3>
-    
-    <ul>
+    <p class="clear-search"><a href="" {{action 'clearSearch'}}>Limpar Resultados</a></p>
+
+    <div class="row">
       {{#each searchResults as |result|}}
-        <li>
-          {{result.volumeInfo.title}}
-        </li>
+        <div class="col-sm-6 col-md-4">
+
+          <div {{action 'saveBook'}} class="cursor-poiter">
+            {{book-box
+              title=result.volumeInfo.title
+              authors=result.volumeInfo.authors
+              thumbnail=result.volumeInfo.imageLinks.thumbnail
+            }}
+          </div>
+
+        </div>
       {{/each}}
-    </ul>
+    </div>
 
   </div>
 

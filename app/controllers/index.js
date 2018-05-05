@@ -9,6 +9,13 @@ export default Controller.extend({
 
   actions: {
 
+    clearSearch() {
+      /**
+       * @desc Limpa os resultados
+       */
+      this.set('searchResults', []);
+    },
+
     searchBooks() {
 
       if (this.get('searchValue') !== '') {

@@ -1,0 +1,54 @@
+/**
+ * Book box
+*/
+.book-box {
+
+  display: inline-block;
+  width: 100%;
+
+  background-color: #fff;
+  border-radius: 2px;
+
+  @include shadowElevation(2);
+  transition: 0.2s;
+
+  padding: 20px 15px;
+  margin-bottom: 20px;
+
+  &:hover {
+
+    @include shadowElevation(8);
+  }
+
+  .book-box-thumbnail {
+
+    display: block;
+    width: 128px;
+    margin: 0 auto;
+
+    @include shadowElevation(2);
+  }
+
+  .book-box-title {
+
+    @include font-semibold(14px);
+    color: $font-color-primary;
+    text-align: center;
+    margin: 20px 0 0 0;
+  }
+
+  .book-box-authors {
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .book-box-authors-author {
+
+    @include font-regular(12px);
+    color: $font-color-secondary;
+    text-align: center;
+  }
+  
+}
