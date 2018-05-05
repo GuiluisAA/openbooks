@@ -1,0 +1,28 @@
+/**
+ * Serach input fiels
+*/
+.search-field {
+
+  display: inline-block;
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+
+  padding: 0 16px;
+  border: none;
+  outline: 0;
+
+  @include shadowElevation(2);
+  transition: box-shadow 0.2s;
+
+  @include font-regular(14px);
+  color: $font-color-primary;
+
+  // Mixin com os fallback dos navegadores paRa placeholder
+  @include placeholder-color($font-color-secondary);
+
+  &:focus {
+    // Elevação quando o input ganha foco
+    @include shadowElevation(8);
+  }
+}

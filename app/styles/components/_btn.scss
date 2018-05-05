@@ -1,0 +1,59 @@
+/**
+ * Button
+*/
+.btn {
+
+  display: inline-block;
+	
+  @include font-semibold(16px);
+	color: #fff;
+  text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+  
+  $btn-color: #388E3C;
+	background-color: $btn-color;
+	border: none;
+	outline: 0;
+	border-radius: 2px;
+	padding: 0 24px;
+	
+	$btn-height: 36px;
+	height: $btn-height;
+  line-height: $btn-height;
+
+  cursor: pointer;
+  transition: 0.2s;
+  
+  &:hover {
+
+    @include shadowElevation(2);
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &:disabled:hover {
+
+		box-shadow: none;
+	}
+
+	&:active {
+
+    @include shadowElevation(8);
+    background-color: darken($btn-color, 5);
+
+	}
+
+	&:focus {
+
+		text-decoration: none;
+		color: #fff;
+	}
+
+	&:disabled {
+
+		cursor: not-allowed !important;
+		opacity: 0.26;
+	}
+
+}
