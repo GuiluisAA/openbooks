@@ -1,0 +1,22 @@
+/**
+ * Openbooks 0.0.1
+ */
+
+@charset 'UTF-8';
+
+// Import Font from Google from google fonts
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500');
+
+// Bootstrap 4.1 Grid System (Justificativa: Oferece ótimas classes de grid que aceleram o desenvolvimento)
+@import 'vendors/bootstrap-grid';
+
+// Abstracts
+@import 'abstracts/variables';
+
+// Base
+@import 'base/reset';
+
+// Layout
+@import 'layout/header';
+@import 'layout/side-menu';
+
