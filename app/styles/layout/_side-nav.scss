@@ -13,28 +13,8 @@
 
   transition: left 0.1s ease-in;
   
-  // Class add quando o menu está ativo
-  &.is-active {
-
-    left: 0;
-    
-    // Camada com transparência atraz da side-nav no mobile
-    &:before {
-      
-      content: '';
-      
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      
-      background-color: rgba(#000, 0.12)
-    }
-  }
-
   // Conteúdo da side-nav
-  .side-nav-content {
+  .side-nav-container {
     
     position: absolute;
     top: 0;
@@ -87,6 +67,32 @@
     }
   }
 
+  // Class add quando o menu está ativo
+  &.is-active {
+
+    left: 0;
+
+    .side-nav-container {
+
+      position: fixed;
+    }
+    
+    // Camada com transparência atraz da side-nav no mobile
+    &:before {
+      
+      content: '';
+      
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      
+      background-color: rgba(#000, 0.12)
+    }
+  }
+
+
   // Desktop / Telas Maiores
   // Menu fixo à esquerda e sempre visível
   @media (min-width: $breakpoint-large) {
@@ -103,7 +109,7 @@
     }
 
     // Conteudo da side-nav no desktop
-    .side-nav-content {
+    .side-nav-container {
 
       position: fixed;
       padding-top: $header-height + 20px;

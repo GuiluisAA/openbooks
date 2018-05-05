@@ -1,7 +1,7 @@
 <div {{action "closeSideNav"}} class="side-nav {{if showSideNav 'is-active'}}">
   
   {{!-- Chama o helper para um stopPropagation (helpers/disable-bubbling.js) --}}
-  <div onclick={{disable-bubbling (action 'stopPropagation')}} class="side-nav-content">
+  <div onclick={{disable-bubbling (action 'stopPropagation')}} class="side-nav-container">
 
     <div class="side-nav-header">
       <h2 class="title">Menu</h2>
