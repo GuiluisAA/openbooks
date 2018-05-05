@@ -1,0 +1,118 @@
+/**
+ * Side Nav
+*/
+.side-nav {
+
+  // Side nav no mobile
+  z-index: $z-index-side-nav;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+
+  transition: left 0.1s ease-in;
+  
+  // Class add quando o menu está ativo
+  &.is-active {
+
+    left: 0;
+    
+    // Camada com transparência atraz da side-nav no mobile
+    &:before {
+      
+      content: '';
+      
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      
+      background-color: rgba(#000, 0.12)
+    }
+  }
+
+  // Conteúdo da side-nav
+  .side-nav-content {
+    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    width: $side-nav-width;
+    background-color: #fff;
+    // mixin de sombra (abstract/_mixins.scss)
+    @include shadowElevation(16);
+
+    .side-nav-header {
+
+      padding: 20px 15px;
+      
+      .title {
+
+        margin: 0;
+        @include font-semibold(24px);
+        color: $font-color-primary;
+      }
+    }
+
+    // Lista do menu (ul)
+    .side-nav-menu {
+
+      margin: 0;
+      padding: 0;
+
+      // links dos itens (li)
+      .side-nav-menu-item a {
+
+        display: block;
+        padding: 8px 15px;
+
+        @include font-regular(16px);
+        line-height: 16px;
+        color: $font-color-secondary;
+        text-decoration: none;
+
+        transition: background-color 0.1s;
+
+        &:hover {
+
+          color: $font-color-primary;
+          background-color: rgba(#000, 0.12);
+        }
+      }
+
+    }
+  }
+
+  // Desktop / Telas Maiores
+  // Menu fixo à esquerda e sempre visível
+  @media (min-width: $breakpoint-large) {
+
+    z-index: 0;    
+    left: 0;
+
+    width: $side-nav-width;
+
+    // Força a camada com transparência atraz da side-nav no mobile suma no desktop mesmo se tiver sido aberta no mobile antes
+    &:before {
+      
+      width: 0 !important;
+    }
+
+    // Conteudo da side-nav no desktop
+    .side-nav-content {
+
+      position: fixed;
+      padding-top: $header-height + 20px;
+
+      .side-nav-header {
+
+        display: none;
+      }
+    }
+
+  }
+}

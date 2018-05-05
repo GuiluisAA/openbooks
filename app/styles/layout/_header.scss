@@ -3,13 +3,14 @@
 */
 .header {
 
-  z-index: 100;
+  z-index: $z-index-header;
   // Define a posição do header como fixed
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   height: $header-height;
+  padding: 0 15px;
   
   background-color: #0097A7;
 
@@ -31,7 +32,7 @@
     vertical-align: middle;
     margin: (($header-height - $header-brand-height) / 2) 0;
 
-    @include font-medium($header-brand-height);
+    @include font-semibold($header-brand-height);
     line-height: $header-brand-height;
     color: #fff;
   }
@@ -45,8 +46,8 @@
 
     display: inline-block;
 
-    @media (min-width: 992px) {
-      // Esconde o botão no tablete/desktop
+    @media (min-width: $breakpoint-large) {
+      // Esconde o botão no desktop
       display: none;
     }
 
@@ -54,7 +55,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    padding: (($header-height - 16px) / 2);
+    padding: (($header-height - 16px) / 2) 15px;
     //Resets do botão
     background-color: transparent;
     outline: 0;

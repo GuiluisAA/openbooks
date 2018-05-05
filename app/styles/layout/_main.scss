@@ -4,4 +4,9 @@
 .main {
 
   padding-top: $header-height;
+
+  @media (min-width: $breakpoint-large) {
+    
+    padding-left: $side-nav-width;
+  }
 }

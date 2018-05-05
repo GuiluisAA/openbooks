@@ -1,5 +1,5 @@
 // Fonts
-$font-family-default: 'Quicksand', sans-serif;
+$font-family-default: 'Open Sans', sans-serif;
 $font-weight-regular: 400;
 $font-weight-medium: 500;
 // Font colors
@@ -7,3 +7,13 @@ $font-color-primary: #212121;
 $font-color-secondary: #757575;
 // Heights
 $header-height: 56px;
+
+// z-index by level
+$z-index-header: 100;
+$z-index-side-nav: 200;
+
+// Width
+$side-nav-width: 250px;
+
+// Break points
+$breakpoint-large: 992px;

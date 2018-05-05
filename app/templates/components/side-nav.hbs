@@ -1,0 +1,30 @@
+<div {{action "closeSideNav"}} class="side-nav {{if showSideNav 'is-active'}}">
+  
+  {{!-- Chama o helper para um stopPropagation (helpers/disable-bubbling.js) --}}
+  <div onclick={{disable-bubbling (action 'stopPropagation')}} class="side-nav-content">
+
+    <div class="side-nav-header">
+      <h2 class="title">Menu</h2>
+    </div>
+
+    <ul class="side-nav-menu">
+      <li class="side-nav-menu-item">
+        <a href="https://emberjs.com/" target="_blank">Ember</a>
+      </li>
+      <li class="side-nav-menu-item">
+        <a href="https://getbootstrap.com/docs/4.1/layout/grid/" target="_blank">Bootstrap 4 Grid</a>
+      </li>
+      <li class="side-nav-menu-item">
+        <a href="https://material.io/guidelines/material-design/elevation-shadows.html" target="_blank">Shadow Reference</a>
+      </li>
+      <li class="side-nav-menu-item">
+        <a href="https://github.com/GuiluisAA" target="_blank">Github</a>
+      </li>
+      <li class="side-nav-menu-item">
+        <a href="https://www.linkedin.com/in/guilherme-araujo-a10314128/" target="_blank">Linkedin</a>
+      </li>
+    </ul>
+    
+  </div>
+
+</div>

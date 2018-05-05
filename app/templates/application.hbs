@@ -1,5 +1,14 @@
-{{header-top}}
+{{header-top
+  onOpenClick=(action 'openSideNav')
+}}
+
+{{side-nav
+  onCloseClick=(action 'closeSideNav')
+  showSideNav=showSideNav
+}}
 
 <div class="main">
-  {{outlet}}
+  <div class="container">
+    {{outlet}}
+  </div>
 </div>
