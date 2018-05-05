@@ -1,7 +1,25 @@
 <div class="index-page">
-  {{input value=value class="search-field" placeholder="Insira o ISBN que deseja pesquisar"}}
 
-  <div class="btn-container">
-    <button class="btn">Pesquisar</button>
+  <form {{action 'searchBooks' on='submit'}}>
+    {{input type='search' value=searchValue class="search-field" placeholder="Insira o ISBN que deseja pesquisar" autocomplete='off'}}
+
+    <div class="btn-container">
+      <button type="submit" class="btn" disabled={{isSearching}}>Pesquisar</button>
+    </div>
+  </form>
+
+  <div class="rearch-results">
+
+    <h3 class="title">Resultados</h3>
+    
+    <ul>
+      {{#each searchResults as |result|}}
+        <li>
+          {{result.volumeInfo.title}}
+        </li>
+      {{/each}}
+    </ul>
+
   </div>
+
 </div>

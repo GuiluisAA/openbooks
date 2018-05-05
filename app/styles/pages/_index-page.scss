@@ -11,4 +11,14 @@
     text-align: center;
 
   }
+
+  .rearch-results {
+
+    .title {
+
+      @include font-semibold(24px);
+      color: $font-color-secondary;
+    }
+
+  }
 }
