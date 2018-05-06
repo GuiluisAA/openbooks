@@ -27,6 +27,8 @@
 
   .header-brand-container {
 
+    display: inline-block;
+    
     $header-brand-height: 24px;
     margin: (($header-height - $header-brand-height) / 2) 0;
     
