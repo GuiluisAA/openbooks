@@ -20,3 +20,38 @@
     box-shadow: 0 4px 0 0 #fff, 0 8px 0 0 #fff;
   }
 }
+
+.icon-spinner {
+
+  position: relative;
+  display: inline-block;
+
+  width: 36px;
+  height: 36px;
+
+  &:before {
+
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    
+    border-radius: 50%;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid transparent;
+
+    animation: spinner .8s linear infinite;
+  }
+}
+
+@keyframes spinner {
+
+  to {
+
+    transform: rotate(360deg);
+  }
+}

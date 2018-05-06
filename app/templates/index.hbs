@@ -4,7 +4,13 @@
     {{input type='search' value=searchValue class="search-field" placeholder="Insira o ISBN que deseja pesquisar" autocomplete='off'}}
 
     <div class="btn-container">
-      <button type="submit" class="btn-search" disabled={{isSearching}}>Pesquisar</button>
+      <button type="submit" class="btn-search" disabled={{isSearching}}>
+        {{#if isSearching}}          
+          <div class="icon-spinner"></div>
+        {{else}}
+          Pesquisar
+        {{/if}}
+      </button>
       {{#link-to 'clicked-books' class='btn-clicked-books'}}
         Livros Clicados
       {{/link-to}}
