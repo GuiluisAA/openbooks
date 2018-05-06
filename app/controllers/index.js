@@ -71,9 +71,15 @@ export default Controller.extend({
       let newBook = this.store.createRecord('book', {
         googleID: book.id,
         title: book.volumeInfo.title,
-        authors: book.volumeInfo.authors,
-        thumbnail: book.volumeInfo.imageLinks.thumbnail
+        authors: book.volumeInfo.authors
       });
+
+      /**
+       * @desc Verifica se existe uma imagem disponível e "seta" ela.
+       */
+      if (book.volumeInfo.imageLinks) {
+        newBook.set('thumbnail', book.volumeInfo.imageLinks.thumbnail);
+      }
 
       /**
        * @desc Então salvo com o método save() que me devolve uma promisse.
