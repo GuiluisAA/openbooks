@@ -9,6 +9,7 @@ $font-color-secondary: #757575;
 $header-height: 56px;
 
 // z-index by level
+$z-index-feedback: 50;
 $z-index-header: 100;
 $z-index-side-nav: 200;
 
@@ -17,3 +18,7 @@ $side-nav-width: 250px;
 
 // Break points
 $breakpoint-large: 992px;
+
+// Colors
+$color-success: #00C853;
+$color-danger: #DD2C00;

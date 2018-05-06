@@ -1,8 +1,11 @@
 import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
 import { run } from '@ember/runloop';
 import $ from 'jquery';
 
 export default Controller.extend({
+
+  feedback: service(),
 
   searchValue: null,
   isSearching: false,
@@ -45,20 +48,28 @@ export default Controller.extend({
           });
 
         })
-        .catch(() => {
+        .catch((error) => {
           run(() => {
             this.set('isSearching', false);
+
+            if (error.status) {
+
+              this.get('feedback').throwFeedback('danger', error.responseJSON.error.message);
+            } else {
+
+              this.get('feedback').throwFeedback('danger', 'Erro na Conexão com a API do Google Books');
+            }
           });
         });
     },
 
     saveBook(book) {
-
       /**
        * @desc    Aqui estou criando um novo record do model (tipo) "book" (models/book.js)
        * @example https://guides.emberjs.com/v3.1.0/models/#toc_models
        */
       let newBook = this.store.createRecord('book', {
+        googleID: book.id,
         title: book.volumeInfo.title,
         authors: book.volumeInfo.authors,
         thumbnail: book.volumeInfo.imageLinks.thumbnail
@@ -68,11 +79,15 @@ export default Controller.extend({
        * @desc Então salvo com o método save() que me devolve uma promisse.
        */
       newBook.save()
-        .then(book => {
-          console.log(book);
+        .then(() => {
+          this.get('feedback').throwFeedback('success', 'Livro salvo como clicado');
         })
         .catch(error => {
-          console.log(error);
+          if (error.status) {
+            this.get('feedback').throwFeedback('danger', error.responseJSON.error.message);
+          } else {
+            this.get('feedback').throwFeedback('danger', 'Erro na Conexão com a API do Google Books');
+          }
         });
     }
   }

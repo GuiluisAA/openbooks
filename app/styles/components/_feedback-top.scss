@@ -1,0 +1,49 @@
+/**
+ * Feedback Top
+*/
+.feedback-top {
+
+  z-index: $z-index-feedback;
+
+  position: fixed;
+  top: 0;
+  right: 15px;
+  left: 15px;
+
+  // max-width: 500px;
+  margin: 0 auto;
+
+  @media (min-width: $breakpoint-large) {
+    left: $side-nav-width + 15px;
+  }
+  
+  height: 32px;
+  line-height: 32px;
+
+  background-color: rgba(#000, 0.57);
+
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  padding: 0 16px;
+
+  @include font-semibold(14px);
+  color: #fff;
+  text-align: center;
+  
+  transition: 0.2s ease-out;
+
+  &.is-active {
+
+    top: $header-height;
+  }
+
+  &.success {
+    
+    background-color: $color-success;
+  }
+
+  &.danger {
+
+    background-color: $color-danger;
+  }
+}

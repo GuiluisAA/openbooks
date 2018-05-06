@@ -7,6 +7,12 @@
   showSideNav=showSideNav
 }}
 
+{{#if feedback.show}}
+  {{feedback-top
+    feedback=feedback
+  }}
+{{/if}}
+
 <div class="main">
   <div class="container">
     {{outlet}}
