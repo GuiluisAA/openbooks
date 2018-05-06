@@ -10,6 +10,7 @@ export default Route.extend({
     this._super(controller, model);
 
     controller.set('searchResults', []);
+    controller.set('searchValue', null);
   }
 
 });

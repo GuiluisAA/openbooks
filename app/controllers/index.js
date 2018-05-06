@@ -17,6 +17,7 @@ export default Controller.extend({
        * @desc Limpa os resultados
        */
       this.set('searchResults', []);
+      this.set('searchValue', null);
     },
 
     searchBooks() {
@@ -31,8 +32,7 @@ export default Controller.extend({
        */
       $.ajax({
         type: "GET",
-        url: `https://www.googleapis.com/books/v1/volumes?q=isbn+${this.get('searchValue')}`,
-
+        url: `https://www.googleapis.com/books/v1/volumes?q=isbn+${this.get('searchValue')}&maxResults=12`,
 
         headers: {
           'API_KEY': 'AIzaSyBqKp73iHowC9fz4lqKT6avFSbNtdYSaK8'
