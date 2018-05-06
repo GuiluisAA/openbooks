@@ -1,0 +1,21 @@
+/**
+ * Clicked Books Page
+*/
+.clicked-books {
+
+  margin-top: 40px;
+
+  .title {
+
+    @include font-semibold(32px);
+    color: $font-color-secondary;
+    margin: 0;
+  }
+
+  .back-index {
+
+    display: inline-block;
+    @include font-regular(12px);
+    margin: 0 0 20px 0;
+  }
+}

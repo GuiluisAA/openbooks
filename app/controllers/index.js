@@ -30,6 +30,7 @@ export default Controller.extend({
         type: "GET",
         url: `https://www.googleapis.com/books/v1/volumes?q=isbn+${this.get('searchValue')}`,
 
+
         headers: {
           'API_KEY': 'AIzaSyBqKp73iHowC9fz4lqKT6avFSbNtdYSaK8'
         }
@@ -51,8 +52,28 @@ export default Controller.extend({
         });
     },
 
-    saveBook() {
-      console.log('Save Book');
+    saveBook(book) {
+
+      /**
+       * @desc    Aqui estou criando um novo record do model (tipo) "book" (models/book.js)
+       * @example https://guides.emberjs.com/v3.1.0/models/#toc_models
+       */
+      let newBook = this.store.createRecord('book', {
+        title: book.volumeInfo.title,
+        authors: book.volumeInfo.authors,
+        thumbnail: book.volumeInfo.imageLinks.thumbnail
+      });
+
+      /**
+       * @desc Então salvo com o método save() que me devolve uma promisse.
+       */
+      newBook.save()
+        .then(book => {
+          console.log(book);
+        })
+        .catch(error => {
+          console.log(error);
+        });
     }
   }
 

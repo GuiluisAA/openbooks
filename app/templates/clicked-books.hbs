@@ -1,0 +1,23 @@
+<div class="clicked-books">
+
+  <h3 class="title">Livros Clicados ({{model.length}})</h3>
+  {{#link-to 'index' class='back-index'}}
+    Voltar para busca
+  {{/link-to}}
+
+  <div class="row">
+    {{!-- Dados carregados a partir da rota (routes/clicked-books.js) --}}
+    {{#each model as |book|}}
+
+      <div class="col-sm-6 col-md-4">
+        {{book-box
+          title=book.title
+          authors=book.authors
+          thumbnail=book.thumbnail
+        }}
+      </div>
+
+    {{/each}}
+  </div>
+
+</div>

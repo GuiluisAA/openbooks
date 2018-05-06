@@ -1,9 +1,9 @@
 /**
  * Button
 */
-.btn {
+@mixin btn-base($btn-color) {
 
-  display: inline-block;
+	display: inline-block;
 	
   @include font-semibold(16px);
 	color: #fff;
@@ -11,7 +11,6 @@
 	text-decoration: none;
 	vertical-align: middle;
   
-  $btn-color: #388E3C;
 	background-color: $btn-color;
 	border: none;
 	outline: 0;
@@ -55,5 +54,15 @@
 		cursor: not-allowed !important;
 		opacity: 0.26;
 	}
+}
+
+.btn-search {
+
+	@include btn-base(#388E3C);
+}
+
+.btn-clicked-books {
+	
+	@include btn-base(#F57F17);
 
 }
